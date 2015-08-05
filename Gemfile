@@ -51,6 +51,8 @@ group :development, :test do
   gem 'rubocop', require: false
 
   gem 'rails-erd', require: false
+
+  ruby "2.2.1"
   
 end
 
