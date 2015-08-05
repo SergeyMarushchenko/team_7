@@ -1,6 +1,7 @@
 == README
 
 Ветка для выполнения ДЗ #6 ruby_bursa_homework_6
+1
 
 
 Please feel free to use a different markup language if you do not plan to run
