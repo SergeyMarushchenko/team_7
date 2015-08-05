@@ -1,0 +1,10 @@
+class CreateGoodsSuppliers < ActiveRecord::Migration
+  def change
+    create_table :goods_suppliers do |t|
+      t.references :good, index: true, foreign_key: true
+      t.references :supplier, index: true, foreign_key: true
+
+      t.timestamps null: false
+    end
+  end
+end
