@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805170727) do
+ActiveRecord::Schema.define(version: 20150808113916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "name"
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +37,9 @@ ActiveRecord::Schema.define(version: 20150805170727) do
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "password"
+    t.integer  "barcode"
+    t.integer  "quantity"
   end
 
   create_table "goods", force: :cascade do |t|
@@ -42,6 +52,8 @@ ActiveRecord::Schema.define(version: 20150805170727) do
     t.text     "comment"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "color"
+    t.string   "country"
   end
 
   create_table "goods_suppliers", force: :cascade do |t|
@@ -55,12 +67,15 @@ ActiveRecord::Schema.define(version: 20150805170727) do
   add_index "goods_suppliers", ["supplier_id"], name: "index_goods_suppliers_on_supplier_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "good_id"
-    t.integer  "client_id"
     t.string   "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "client_id"
+    t.integer  "good_id"
   end
+
+  add_index "orders", ["client_id"], name: "index_orders_on_client_id", using: :btree
+  add_index "orders", ["good_id"], name: "index_orders_on_good_id", using: :btree
 
   create_table "suppliers", force: :cascade do |t|
     t.string   "name"
@@ -69,8 +84,11 @@ ActiveRecord::Schema.define(version: 20150805170727) do
     t.text     "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
   end
 
   add_foreign_key "goods_suppliers", "goods"
   add_foreign_key "goods_suppliers", "suppliers"
+  add_foreign_key "orders", "clients"
+  add_foreign_key "orders", "goods"
 end
