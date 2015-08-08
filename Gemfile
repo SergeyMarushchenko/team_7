@@ -52,7 +52,7 @@ group :development, :test do
 
   gem 'rails-erd', require: false
 
-  ruby "2.2.1"
+  
   
 end
 
