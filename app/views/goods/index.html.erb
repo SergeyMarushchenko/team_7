@@ -1,0 +1,15 @@
+<h1> Наши товары </h1>
+<p> Единиц товара на складе: <%= @goods_quantity %> </p>
+
+<table>
+	<%- @goods.each do |good| %>
+	<tr>
+		<td><%= link_to(good.name, good_path(id: good.id)) %></td>
+		<td><%= good.price %></td>
+		<td><%= link_to('Delete', good_path(id: good.id), method: :delete )  %></td>
+	</tr>
+	<%-end %>
+</table>
+<br>
+
+<td><%= link_to('Добавить товар', new_good_path)  %></td>

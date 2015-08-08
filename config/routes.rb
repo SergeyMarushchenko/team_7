@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root 'my_first_page#index'
+
+  resources :goods 
+
+
 end
