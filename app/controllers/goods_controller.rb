@@ -1,5 +1,7 @@
 class GoodsController < ApplicationController
 
+	before_filter :find_good, only: [:show, :edit, :update, :destroy]
+
 	def new
 		@good = Good.new
 	end
@@ -13,7 +15,11 @@ class GoodsController < ApplicationController
 		@good.volume = params[:good][:volume]
 
 		@good.save
-		redirect_to goods_path
+		if @good.errors.empty?
+          redirect_to goods_path
+        else
+      	render "new"
+        end
 	end
 
 	def index
@@ -23,19 +29,33 @@ class GoodsController < ApplicationController
 	end
 
 	def show
-		@good = Good.find(params[:id])
 	end
 
 	def edit
 	end
 
 	def update
+		@good.barcode = params[:good][:barcode]
+		@good.name = params[:good][:name]
+		@good.price = params[:good][:price]
+		@good.color = params[:good][:color]
+		@good.volume = params[:good][:volume]
+
+		@good.save
+
+		if @good.errors.empty?
+          redirect_to goods_path
+        else
+      	render "edit"
+        end
 	end
 
 	def destroy
-		Good.find(params[:id]).destroy
+		find_good.destroy
 		redirect_to goods_path
 	end
 
-
+    def find_good
+      @good = Good.find(params[:id])
+    end 
 end

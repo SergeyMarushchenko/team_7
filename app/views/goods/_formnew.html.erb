@@ -1,0 +1,33 @@
+<h1>Создание нового товара</h1><br>
+<%= form_for @good do |form| %>
+<table>
+  <tr>
+    <td><%= form.label :barcode, 'Код товара' %></td>
+    <td><%= form.text_field :barcode %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :name, 'Имя' %></td>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :price, 'Цена' %></td>
+    <td><%= form.text_field :price %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :color, 'Цвет' %></td>
+    <td><%= form.text_field :color %></td>
+  </tr>
+  <tr>
+    <td><%= form.label :volume, 'Объем' %></td>
+    <td><%= form.text_field :volume %></td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td><%= form.submit 'Создать товар' %></td>
+  </tr>
+</table>
+
+<%- end %>
+
+<br>
+<%= link_to 'Назад к списку товаров', goods_path %>

@@ -1,4 +1,32 @@
 <h1><%= @good.name %></h1>
-<ul>
-	<li><%= @good.price %></li>
-</ul>
+<table>
+  <tr>
+    <td> ID товара: </td>
+    <td> <%= @good.id %> </td>
+  </tr>
+
+  <tr>
+    <td> Название товара: </td>
+    <td> <%= @good.name %> </td>
+  </tr>
+
+  <tr>
+    <td> Цена: </td>
+    <td> <%= @good.price %> </td>
+    <td> грн. </td>
+  </tr>
+
+  <tr>
+    <td> Объем: </td>
+    <td> <%= @good.volume %> </td>
+    <td> мл. </td>
+  </tr>
+
+  <tr>
+    <td> Описание товара: </td>
+    <td> <%= @good.comment %> </td>
+  </tr>
+
+</table>
+<br>
+<%= link_to 'Назад к списку товаров', goods_path %>
