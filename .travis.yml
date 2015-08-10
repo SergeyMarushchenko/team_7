@@ -11,3 +11,5 @@ deploy:
   on:
     repo: SergeyMarushchenko/team_7
     branch: ruby_bursa_homework_7
+
+run: "rake db:migrate"
