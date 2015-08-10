@@ -1,15 +1,17 @@
 language: ruby
 rvm:
-- 2.1.0
-- 2.1.2
+#- 2.1.0
+#- 2.1.2
 - 2.2.1
 deploy:
   provider: heroku
   api_key:
     secure: BHndj3evNRDHHynAK2fNlBScxa4R/JJ+91gh50h8/KHt3gyDhwjjBPZkWQFY4tgWUdEUqAJSCpJwL5c7WgapCvpf42PmVv6lmrTsmKJmgVrIjmY2lXLIZoA4PjkXk6t4OJDMYyqU73XScsAv0elB+xKspWGoHGKvucvECoEOVFhtG1cxz8GfmfP5kbIIRTnTNicvycwbVQCtButL1sksUldZ2bmQPh9EiFMGgvTSyNBTX0WdwlUKGVj6wj0S7ayzbKVBKFEvzmmHE4cZIA7Ml8jSTn4GpKIYpIE0WFgn4gwY9YJNQZAowWXTTuucZ19iKfWhwcguPh+/sv8PjKgxTKFtdXfozIM4MTDRSn7oAlfLF7Kj+8UnEtcyyxKv+fwrswGhT7+miqd6KllpDKL3dk9iv25ktOGKLZEW6aZULK6jtZWYzkgox9QQdnYOTgPoJt0vxPknjeAs1xiXIwU6AykgWT0ako1LH7yoDlh8xVoCWFnN12aJEwICDskWrfIklPG6/BNwaeJGvBRteEbnSqTsSonszFqvDrIHcLddpBvPNC89V7IeQtQ3D/EJAuHaBmkXg/bbK1AjU3baw9UkXTwYlnClGS8qg16dVpkgPkdUx/ikyblm75IdotvvF8qdKIMXYTz0nZ45AFZGkQdUUgUV0rLMoH66Que/G/OEEkI=
-  app: team7
+  app: team7app
   on:
     repo: SergeyMarushchenko/team_7
     branch: ruby_bursa_homework_7
 
 run: "rake db:migrate"
+run: "heroku open"
+
