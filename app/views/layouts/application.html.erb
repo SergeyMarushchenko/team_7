@@ -7,8 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id = 'all'>
+
+
+<% if user_signed_in? %>
+    <strong>Здравствуйте, <%= current_user.email %></strong>
+    <div id = 'edit_exit'><%= link_to 'Редактировать профиль', edit_user_registration_path %>|<%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></div>
+<% else %>
+    <div id = 'enter_signup'><%= link_to 'Войти', new_user_session_path %>|<%= link_to 'Зарегистрироваться', new_user_registration_path %></div>
+<% end %>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 
 <%= yield %>
+</div>
+
 
 </body>
 </html>
