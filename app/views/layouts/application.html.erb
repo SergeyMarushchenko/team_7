@@ -8,6 +8,18 @@
 </head>
 <body>
 
+<% if user_signed_in? %>
+    <strong>Здравствуйте, <%= current_user.email %></strong>
+    <%= link_to 'Редактировать профиль', edit_user_registration_path %>|<%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %>|<%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
 <%= yield %>
 
 </body>

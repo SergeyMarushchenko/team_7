@@ -1,3 +1,4 @@
+=begin
 RailsAdmin.config do |config|
 
   ### Popular gems integration
@@ -32,3 +33,4 @@ RailsAdmin.config do |config|
     # history_show
   end
 end
+=end
