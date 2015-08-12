@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+#edit_exit {
+	padding-left: 1000px;
+}
+#enter_signup {
+	padding-left: 1000px;
+}
