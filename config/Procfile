@@ -1,0 +1,1 @@
+web: bundle exec team_7 -C config/routes.rb
