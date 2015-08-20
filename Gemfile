@@ -60,7 +60,7 @@ group :development, :test do
 
   gem 'rails-erd', require: false
 
-  gem 'rails_12factor'
+ 
 
 end
 
