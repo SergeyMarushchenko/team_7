@@ -214,7 +214,6 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails-erd
   rails_12factor
-  rake
   rubocop
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
