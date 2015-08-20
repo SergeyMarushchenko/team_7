@@ -2,7 +2,7 @@ language: ruby
 rvm:
 #- 2.1.0
 #- 2.1.2
-- 2.2.1
+- 2.2.2
 deploy:
   provider: heroku
   api_key:
@@ -10,7 +10,7 @@ deploy:
   app: cosmetichka
   on:
     repo: SergeyMarushchenko/team_7
-    branch: merge_with_vlad
+    branch: ruby_bursa_homework_7
 run: "heroku run rake db:reset"
 run: "heroku open"
 
