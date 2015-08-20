@@ -46,7 +46,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-<<<<<<< HEAD
+
   gem 'rake'
 
   gem 'devise'
@@ -54,8 +54,7 @@ group :development, :test do
   gem 'mailcatcher'
   gem 'cancancan'
 
-=======
->>>>>>> 3fc0361251ab8da8267034fc5eef7b024474beb5
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
