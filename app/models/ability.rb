@@ -1,12 +1,12 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(client)
-    client ||= Client.new
- if client.role == "admin"
+  def initialize(user)
+    user ||= User.new
+ if user.role == "admin"
     can :manage, :all 
 end
-  if client.role == "user"
+  if user.role == "user"
     can :read, :all 
     can :update, client
     can :delete, client
