@@ -17,8 +17,8 @@ script:
   - bundle exec rake db:test:prepare
   - bundle exec rake
 before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database strano_test' -U postgres
+  #- cp config/database.travis.yml config/database.yml
+  #- psql -c 'create database strano_test' -U postgres
 #run: "heroku run rake db:reset"
 #run: "heroku open"
 
