@@ -14,11 +14,11 @@ deploy:
 
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rake
+  #- bundle exec rake db:test:prepare
+  - bundle exec rake db:reset
 before_script:
   #- cp config/database.travis.yml config/database.yml
   #- psql -c 'create database strano_test' -U postgres
 #run: "heroku run rake db:reset"
-#run: "heroku open"
+run: "heroku open"
 

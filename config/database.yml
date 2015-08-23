@@ -21,9 +21,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *defaults
+  <<: *default
   #database: team7_test_db
 
 production:
-  <<: *defaults
+  <<: *default
   #database: team7_db
