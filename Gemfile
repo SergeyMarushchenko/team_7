@@ -11,7 +11,7 @@ gem 'mailcatcher'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'pg'
+#gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,12 +39,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
   gem 'rake'
+
+  gem 'pg'
+
+
 
  
 
@@ -60,11 +65,11 @@ group :development, :test do
 
   gem 'rails-erd', require: false
 
-  gem 'rails_12factor'
+  
 
 end
 
 group :production do
-  #gem 'pg'
+  gem 'pg'
 end
 
