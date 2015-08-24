@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 ruby '2.2.2'
 
-gem 'rails_12factor'
+group :production do
+  gem 'rails_12factor'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -43,7 +45,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 
-group :development, :test, :production do
+group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -60,10 +62,7 @@ group :development, :test, :production do
   gem 'rails-erd', require:false
 
   gem 'mailcatcher'
-##
 
 end
-
-
 
 
