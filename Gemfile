@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+#ruby '2.2.2'
 
 group :production do
   gem 'rails_12factor'
@@ -43,7 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cancancan'
 
 
 group :development, :test do
@@ -63,6 +63,7 @@ group :development, :test do
   gem 'rails-erd', require:false
 
   gem 'mailcatcher'
+  
 
 end
 
