@@ -9,12 +9,14 @@
 	<tr>
 		<td><%= link_to(good.name, good_path(id: good.id)) %></td>
 		<td><%= good.price %></td>
-		<td><%= link_to('Delete', good_path(id: good.id), method: :delete )  %></td>
-		<td><%= link_to('Edit', edit_good_path(id: good.id) )  %></td>
+		<td><% if can? :destroy, @good %><%= link_to('Delete', good_path(id: good.id), method: :delete ) %> <%end %> </td>
+		<td><% if can? :update, @good %><%= link_to('Edit', edit_good_path(id: good.id) ) %> <%- end %> </td>
 	</tr>
-	<%-end %>
+	<%-end%>
 </table>
 <br>
-
-<td><%= link_to('Добавить товар', new_good_path)  %></td> 
+<td><% if can? :create, @good %>
+<%= link_to('Добавить товар', new_good_path)  %>
+<% end %>
+</td> 
 

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+#ruby '2.2.2'
 
 group :production do
   gem 'rails_12factor'
@@ -63,6 +63,7 @@ group :development, :test do
   gem 'rails-erd', require:false
 
   gem 'mailcatcher'
+  gem 'cancancan'
 
 end
 
