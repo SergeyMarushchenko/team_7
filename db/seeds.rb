@@ -171,11 +171,11 @@ good15 = Good.create!(
 )
 
 user1 = User.create!(
-	email: '1111@mail.ru',
+	email: 'admin@mail.ru',
 	role: 'admin'
 	)
 
 user2 = User.create!(
-	email: '2222@mail.ru',
+	email: 'user@mail.ru',
 	role: 'user'
 	)
