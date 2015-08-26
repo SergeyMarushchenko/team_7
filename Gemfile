@@ -43,7 +43,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cancancan'
 
 
 group :development, :test do
@@ -63,7 +63,7 @@ group :development, :test do
   gem 'rails-erd', require:false
 
   gem 'mailcatcher'
-  gem 'cancancan'
+  
 
 end
 
