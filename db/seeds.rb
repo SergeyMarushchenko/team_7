@@ -169,13 +169,3 @@ good15 = Good.create!(
 	price: 191.1,
 	volume: 25
 )
-
-user1 = User.create!(
-	email: 'admin@mail.ru',
-	role: 'admin'
-	)
-
-user2 = User.create!(
-	email: 'user@mail.ru',
-	role: 'user'
-	)

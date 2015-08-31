@@ -22,7 +22,20 @@
     <td><%= form.text_field :volume %></td>
   </tr>
   <tr>
-    <td> </td>
+    
+
+    <td>
+
+      <%= form_for @good, url: goods_path, html: { multipart: true } do |form| %>
+      <%= form.file_field :avatar %>
+      <% end %>
+      
+    </td> 
+
+
+    </td>
+    
+
     <td><%= form.submit 'Создать товар' %></td>
   </tr>
 </table>
