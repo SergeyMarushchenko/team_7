@@ -1,5 +1,10 @@
 <h1><%= @good.name %></h1>
+<%= image_tag @good.avatar.url %>
+<%= image_tag @good.avatar.url(:medium) %>
+<%= image_tag @good.avatar.url(:thumb) %>
+
 <table>
+
   <tr>
     <td> ID товара: </td>
     <td> <%= @good.id %> </td>

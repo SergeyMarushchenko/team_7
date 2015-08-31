@@ -13,7 +13,6 @@ class GoodsController < ApplicationController
 		@good.price = params[:good][:price]
 		@good.color = params[:good][:color]
 		@good.volume = params[:good][:volume]
-
 		@good.save
 		if @good.errors.empty?
           redirect_to goods_path
@@ -25,6 +24,7 @@ class GoodsController < ApplicationController
 	def index
 		@goods_quantity = Good.count
 		@goods = Good.all
+		@goods = Good.order(:name).page params[:page]
 		#render text: @goods.map {|g| "#{g.name}: #{g.price}"}.join("<br/>")
 	end
 
@@ -40,6 +40,7 @@ class GoodsController < ApplicationController
 		@good.price = params[:good][:price]
 		@good.color = params[:good][:color]
 		@good.volume = params[:good][:volume]
+		
 
 		@good.save
 
